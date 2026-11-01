@@ -421,24 +421,26 @@
       }
 
       .hero {
-        padding: 24px 20px 8px;
+        padding: 16px 20px 4px;
         text-align: center;
-        gap: 6px
+        gap: 10px
       }
 
       .hero img.logo {
-        width: min(300px, 78%)
+        width: min(250px, 70%);
+        margin: 0 auto
       }
 
       .hero .m {
-        max-height: 230px;
+        max-height: 210px;
         width: auto;
         order: -1
       }
 
       .hero p {
-        margin: 10px auto 22px;
-        font-size: 17px
+        margin: 6px auto 18px;
+        font-size: 16px;
+        line-height: 1.55
       }
 
       .hero .btn {
@@ -546,7 +548,10 @@
   <main id="top">
     <div class="wrap hero">
       <div>
-        <img class="logo" src="assets/logo.webp" data-ia="logo_alt" alt="Hexlume Games logosu">
+        <picture>
+          <source media="(max-width:760px)" srcset="assets/logo-wordmark.webp"><img class="logo" src="assets/logo.webp"
+            data-ia="logo_alt" alt="Hexlume Games logosu">
+        </picture>
         <p data-i="hero_p">Bağımsız bir Android oyun stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına kadar,
           hafif ve akıcı oyunlar yapıyoruz.</p>
         <a class="btn" href="#oyunlar" data-i="hero_cta">Oyunları keşfet</a>
