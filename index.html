@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hexlume Games – Android Oyunları</title>
+<meta name="description" content="Hexlume Games bağımsız Android oyun stüdyosudur. Minesweeper, Sudoku, Solitaire, Flow Sort ve daha fazlası Google Play'de.">
+<meta property="og:title" content="Hexlume Games">
+<meta property="og:description" content="Google Play'de yayınlanan Hexlume Games oyunları.">
+<meta property="og:image" content="assets/logo.webp">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#04050d;--bg2:#0b0d22;--card:#0e1130;--line:#1d2660;--blue:#1e7bff;--cyan:#19e3d0;--purple:#2a1a8a;--text:#e8edff;--mute:#9aa6d6}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:radial-gradient(900px 500px at 80% -5%,#1a1560 0,transparent 60%),var(--bg);color:var(--text);font:400 17px/1.6 "Exo 2",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+h1,h2,h3{font-family:Michroma,"Exo 2",sans-serif;font-weight:400;line-height:1.2}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:#04050dcc;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+header img{height:34px}
+nav{display:flex;gap:22px;font-size:15px}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--cyan)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.lang button{background:none;border:0;color:var(--mute);font:600 13px "Exo 2",sans-serif;padding:5px 10px;cursor:pointer}.lang button[aria-pressed=true]{background:linear-gradient(90deg,var(--blue),var(--cyan));color:#02111a}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px;padding:56px 0 40px}
+.hero img.logo{width:min(440px,100%)}
+.hero p{max-width:46ch;color:var(--mute);margin:18px 0 26px;font-size:19px}
+.hero .m{justify-self:center;max-height:520px;width:auto;filter:drop-shadow(0 0 40px #1e7bff55);animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:linear-gradient(90deg,var(--blue),var(--cyan));color:#02111a;font-weight:600;text-decoration:none}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--text);margin-left:8px}
+.btn:hover{filter:brightness(1.12)}
+section{padding:56px 0}
+h2{font-size:clamp(22px,3vw,30px);margin-bottom:8px}
+.sub{color:var(--mute);margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.game{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.game:hover,.game:target{border-color:var(--cyan);transform:translateY(-3px)}
+.top{display:flex;align-items:center;gap:14px}.ico{width:72px;height:72px;border-radius:18px;object-fit:cover;box-shadow:0 0 0 1px #ffffff22,0 0 26px var(--g)}
+.meta{display:flex;flex-direction:column;gap:2px}.date{font-size:13px;color:var(--mute)}
+.soon{align-self:flex-start;font-size:14px;color:var(--mute);border:1px dashed var(--line);border-radius:8px;padding:4px 10px}
+.links{display:flex;gap:16px;flex-wrap:wrap;align-items:center;font-size:14px}.links a.pp{color:var(--mute);text-decoration:none}.links a.pp:hover{color:var(--text)}
+.tl{list-style:none;padding:0;border-left:2px solid var(--line);margin-left:6px}.tl li{position:relative;padding:0 0 16px 22px}.tl li:before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}.tl li.soon-i:before{background:none;border:2px solid var(--cyan)}.tl time{color:var(--cyan);font-weight:600;margin-right:10px}.tl a{text-decoration:none}.tl a:hover{color:var(--cyan)}
+.game h3{font-size:14px;line-height:1.35}
+.game p{color:var(--mute);font-size:15px;flex:1}
+.game .tag{font-size:13px;color:var(--cyan)}
+.game a.play{align-self:flex-start;font-weight:600;text-decoration:none;color:var(--cyan);border-bottom:1px solid transparent}
+.game a.play:hover{border-color:var(--cyan)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about .pics{display:flex;gap:10px;justify-content:center}
+.about .pics img{width:31%;max-width:150px;object-fit:contain}
+.about .pics img:nth-child(2){margin-top:30px}
+.swatches{display:flex;gap:10px;margin-top:20px}
+.swatches i{width:34px;height:34px;border-radius:50%;border:1px solid #ffffff33}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{text-decoration:none}footer a:hover{color:var(--cyan)}
+@media(max-width:760px){nav a:nth-child(2),nav a:nth-child(4){display:none}.hero,.about{grid-template-columns:1fr}.hero .m{max-height:340px;order:-1}nav{gap:14px}header img{height:28px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#top" aria-label="Hexlume Games"><img src="assets/logo-icon.webp" alt="Hexlume Games"></a>
+  <nav><a href="#oyunlar" data-i="nav_games">Oyunlar</a><a href="#takvim" data-i="nav_tl">Takvim</a><a href="#hakkinda" data-i="nav_about">Hakkımızda</a><a href="#iletisim" data-i="nav_contact">İletişim</a><span class="lang" role="group" aria-label="Language"><button type="button" data-l="tr" aria-pressed="true">TR</button><button type="button" data-l="en" aria-pressed="false">EN</button></span></nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <div>
+    <img class="logo" src="assets/logo.webp" data-ia="logo_alt" alt="Hexlume Games logosu">
+    <p data-i="hero_p">Bağımsız bir Android oyun stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına kadar, hafif ve akıcı oyunlar yapıyoruz.</p>
+    <a class="btn" href="#oyunlar" data-i="hero_cta">Oyunları keşfet</a>
+    <a class="btn ghost" href="https://play.google.com/store/apps/developer?id=Hexlume+Games" rel="noopener" data-i="open_play">Google Play'de aç</a>
+  </div>
+  <img class="m" src="assets/mascot-1.webp" data-ia="m1_alt" alt="Hexlume Games maskotu başparmağını kaldırıyor">
+</div>
+
+<section id="oyunlar"><div class="wrap">
+  <h2 data-i="games_h">Oyunlarımız</h2>
+  <p class="sub" data-i="games_sub">Her oyunun Google Play sayfasına ve gizlilik politikasına buradan ulaşabilirsiniz.</p>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="takvim"><div class="wrap">
+  <h2 data-i="tl_h">Yayın takvimi</h2>
+  <p class="sub" data-i="tl_sub">Google Play'e çıkış tarihlerimiz.</p>
+  <ol class="tl" id="tl"></ol>
+</div></section>
+
+<section id="hakkinda"><div class="wrap about">
+  <div>
+    <h2>Hexlume Games</h2>
+    <p class="sub" style="margin-bottom:14px" data-i="about_sub">Çanakkale'den, mobil için.</p>
+    <p data-i="about_p">Oyunlarımızı kısa seanslarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.</p>
+    <div class="swatches" aria-label="Marka renkleri"><i style="background:#1e7bff"></i><i style="background:#19e3d0"></i><i style="background:#2a1a8a"></i><i style="background:#000"></i></div>
+  </div>
+  <div class="pics">
+    <img src="assets/mascot-2.webp" data-ia="m2_alt" alt="Hex zıplıyor" loading="lazy">
+    <img src="assets/mascot-3.webp" data-ia="m3_alt" alt="Hex işaret ediyor" loading="lazy">
+    <img src="assets/mascot-4.webp" data-ia="m4_alt" alt="Hex göz kırpıyor" loading="lazy">
+  </div>
+</div></section>
+</main>
+
+<footer id="iletisim"><div class="wrap">
+  <span>© <span id="y"></span> Hexlume Games</span>
+  <span><a href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a> &nbsp; <a href="https://play.google.com/store/apps/developer?id=Hexlume+Games" rel="noopener">Google Play</a></span>
+</div></footer>
+
+<script>
+const P="https://play.google.com/store/apps/details?id=com.hexlumegames.";
+const PP="https://hexlumegames-cpu.github.io/";
+const T={
+tr:{title:"Hexlume Games – Android Oyunları",desc:"Hexlume Games bağımsız Android oyun stüdyosudur. Minesweeper, Sudoku, Solitaire, Flow Sort ve daha fazlası Google Play'de.",
+ nav_games:"Oyunlar",nav_tl:"Takvim",nav_about:"Hakkımızda",nav_contact:"İletişim",
+ hero_p:"Bağımsız bir Android oyun stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına kadar, hafif ve akıcı oyunlar yapıyoruz.",hero_cta:"Oyunları keşfet",open_play:"Google Play'de aç",
+ games_h:"Oyunlarımız",games_sub:"Her oyunun Google Play sayfasına ve gizlilik politikasına buradan ulaşabilirsiniz.",
+ tl_h:"Yayın takvimi",tl_sub:"Google Play'e çıkış tarihlerimiz.",about_sub:"Çanakkale'den, mobil için.",
+ about_p:"Oyunlarımızı kısa seanslarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
+ logo_alt:"Hexlume Games logosu",m1_alt:"Hexlume Games maskotu başparmağını kaldırıyor",m2_alt:"Hex zıplıyor",m3_alt:"Hex işaret ediyor",m4_alt:"Hex göz kırpıyor",
+ soon:"Yakında",soon_play:"Google Play'de yakında",soon_p:"(yakında)",privacy:"Gizlilik politikası",icon:"ikonu",loc:"tr-TR"},
+en:{title:"Hexlume Games – Android Games",desc:"Hexlume Games is an independent Android game studio. Minesweeper, Sudoku, Solitaire, Flow Sort and more on Google Play.",
+ nav_games:"Games",nav_tl:"Timeline",nav_about:"About",nav_contact:"Contact",
+ hero_p:"We are an independent Android game studio. From classic puzzles to card and dice games, we make light, smooth games.",hero_cta:"Explore the games",open_play:"Open on Google Play",
+ games_h:"Our games",games_sub:"Find each game's Google Play page and privacy policy here.",
+ tl_h:"Release timeline",tl_sub:"When our games launched on Google Play.",about_sub:"From Çanakkale, for mobile.",
+ about_p:"We design our games to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
+ logo_alt:"Hexlume Games logo",m1_alt:"Hexlume Games mascot giving a thumbs up",m2_alt:"Hex jumping",m3_alt:"Hex pointing",m4_alt:"Hex winking",
+ soon:"Coming soon",soon_play:"Coming soon to Google Play",soon_p:"(coming soon)",privacy:"Privacy policy",icon:"icon",loc:"en-US"}};
+// id, name, icon, color, tag{tr,en}, ISO date, desc{tr,en}, play package (null = not live), privacy folder
+const games=[
+ ["luckyslots","Lucky Slots: Vegas Casino","luckyslots","#a43bff",{tr:"Casino · 18+",en:"Casino · 18+"},"2026-09-15",{tr:"Klasik 3 makaralı slot eğlencesi, çevrimdışı oynanır. Gerçek para yok; yalnızca 18 yaş üstü için, eğlence amaçlı.",en:"Classic 3-reel slot fun that works offline. No real money: for adults 18+, for entertainment only."},"luckyslots","luckyslots-privacy"],
+ ["jackpotdice","Jackpot Dice: Roll & Score","jackpotdice","#f1c40f",{tr:"Zar",en:"Dice"},"2026-07-12",{tr:"5 zar at, 13 kategoriyi doldur. Günlük görev, seri takibi ve 20 dil desteği.",en:"Roll 5 dice and fill 13 categories. Daily challenge, streak tracking and 20 languages."},"jackpotdice","jackpotdice-privacy"],
+ ["flowsort","Flow Sort: Color Tube Puzzle","flowsort","#ff3fd0",{tr:"Bulmaca",en:"Puzzle"},"2026-06-15",{tr:"Renkli sıvıları tüplere ayır. 500 seviye, günlük meydan okuma, süre baskısı yok.",en:"Sort colorful liquids into tubes. 500 levels, a daily challenge and no time pressure."},"flowsort","flowsort-privacy"],
+ ["sudoku9","Sudoku 9","sudoku9","#ff9f1c",{tr:"Bulmaca",en:"Puzzle"},"2026-06-06",{tr:"Klasik 9×9 sudoku: 5 zorluk, günlük görev, notlar ve ipuçları. 22 dil, çevrimdışı.",en:"Classic 9×9 Sudoku: 5 difficulty levels, daily challenge, notes and hints. 22 languages, works offline."},"sudoku9","sudoku9-privacy"],
+ ["minesweeper","Minesweeper","minesweeper","#e0457b",{tr:"Bulmaca",en:"Puzzle"},"2026-05-11",{tr:"Klasik mayın tarlası: 3 zorluk, 5 renk teması ve skor tablosu.",en:"Classic Minesweeper: 3 difficulty levels, 5 color themes and a leaderboard."},"minesweeper","minesweeper-privacy"],
+ ["elementalist","Elementalist: Merge Puzzle","elementalist","#9b5cff",{tr:"Bulmaca",en:"Puzzle"},"2026-04-07",{tr:"Aynı elementleri sürükleyip birleştir, daha güçlü elementler keşfet.",en:"Drag and merge matching elements to discover stronger, rarer ones."},"elementalist","elementalist-privacy"],
+ ["onemoretry","Perfect Tap: One More Try","perfecttap","#4aa3ff",{tr:"Arcade",en:"Arcade"},"2026-03-31",{tr:"Daire merkeze geldiğinde dokun. Bir hata oyunu bitirir; skorunu geç.",en:"Tap when the circle hits the center. One miss ends the run, so beat your high score."},"onemoretry","onemoretry-privacy"],
+ ["solitaire","Solitaire: Classic Card Game","solitaire","#1fa35c",{tr:"Kart",en:"Card"},"2026-03-27",{tr:"Klondike solitaire: 1 veya 3 kart çekme, sınırsız geri alma, çevrimdışı.",en:"Klondike Solitaire: draw 1 or 3 cards, unlimited undo, works offline."},"solitaire","solitaire-privacy"],
+ ["sudoku16","Sudoku 16","sudoku16","#3d7bff",{tr:"Bulmaca",en:"Puzzle"},"2026-02-24",{tr:"16×16 dev ızgara, 0-9 ve A-F karakterleriyle. 4 zorluk seviyesi ve ipucu.",en:"A giant 16×16 grid played with 0-9 and A-F. 4 difficulty levels and hints."},"sudoku16","sudoku16-privacy"]
+];
+function render(l){
+ const t=T[l];
+ document.documentElement.lang=l;document.title=t.title;
+ document.querySelector('meta[name=description]').content=t.desc;
+ document.querySelectorAll('[data-i]').forEach(e=>e.textContent=t[e.dataset.i]);
+ document.querySelectorAll('[data-ia]').forEach(e=>e.alt=t[e.dataset.ia]);
+ const fmt=iso=>new Date(iso+"T12:00:00").toLocaleDateString(t.loc,{day:"numeric",month:"long",year:"numeric"});
+ document.getElementById("grid").innerHTML=games.map(([id,n,ic,c,tag,iso,d,pkg,pp])=>
+  `<article class="game" id="${id}" style="--g:${c}66"><div class="top"><img class="ico" src="assets/icon-${ic}.webp" alt="${n} ${t.icon}" width="72" height="72" loading="lazy"><div class="meta"><span class="tag">${tag[l]}</span><span class="date">${pkg?fmt(iso):t.soon}</span></div></div>
+  <h3>${n}</h3><p>${d[l]}</p>
+  ${pkg?`<div class="links"><a class="play" href="${P}${pkg}" rel="noopener">${t.open_play}</a><a class="pp" href="${PP}${pp}/privacy-policy.html" rel="noopener">${t.privacy}</a></div>`:`<span class="soon">${t.soon_play}</span>`}</article>`).join("");
+ document.getElementById("tl").innerHTML=games.slice().reverse().map(([id,n,,,,iso,,pkg])=>
+  `<li class="${pkg?"":"soon-i"}"><time datetime="${iso}">${fmt(iso)}</time><a href="#${id}">${n}</a>${pkg?"":" "+t.soon_p}</li>`).join("");
+ document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===l));
+}
+let lang=(navigator.language||"tr").toLowerCase().startsWith("tr")?"tr":"en";
+try{const q=new URLSearchParams(location.search).get("lang"),s=localStorage.getItem("hx-lang");lang=(q==="tr"||q==="en")?q:(s==="tr"||s==="en")?s:lang}catch(e){}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{lang=b.dataset.l;try{localStorage.setItem("hx-lang",lang)}catch(e){}render(lang)}));
+document.getElementById("y").textContent=new Date().getFullYear();
+render(lang);
+</script>
+</body>
+</html>
