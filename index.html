@@ -564,7 +564,7 @@
     <section id="oyunlar">
       <div class="wrap">
         <h2 data-i="games_h">Oyunlarımız</h2>
-        <p class="sub" data-i="games_sub">Her oyunun Google Play sayfasına ve gizlilik politikasına buradan
+        <p class="sub" data-i="games_sub">Her ürünün Google Play sayfasına ve gizlilik politikasına buradan
           ulaşabilirsiniz.</p>
         <div class="grid" id="grid"></div>
       </div>
@@ -610,28 +610,29 @@
     const PP = "https://hexlumegames-cpu.github.io/";
     const T = {
       tr: {
-        title: "Hexlume Games – Android Oyunları", desc: "Hexlume Games bağımsız Android oyun stüdyosudur. Minesweeper, Sudoku, Solitaire, Flow Sort ve daha fazlası Google Play'de.",
-        nav_games: "Oyunlar", nav_tl: "Takvim", nav_about: "Hakkımızda", nav_contact: "İletişim",
-        hero_p: "Bağımsız bir Android oyun stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına kadar, hafif ve akıcı oyunlar yapıyoruz.", hero_cta: "Oyunları keşfet", open_play: "Google Play'de aç",
-        games_h: "Oyunlarımız", games_sub: "Her oyunun Google Play sayfasına ve gizlilik politikasına buradan ulaşabilirsiniz.",
+        title: "Hexlume Games – Android Oyunları ve Uygulamaları", desc: "Hexlume Games bağımsız bir Android stüdyosudur. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica ve daha fazlası Google Play'de.",
+        nav_games: "Ürünler", nav_tl: "Takvim", nav_about: "Hakkımızda", nav_contact: "İletişim",
+        hero_p: "Bağımsız bir Android stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına, günlük işleri kolaylaştıran uygulamalara kadar hafif ve akıcı ürünler yapıyoruz.", hero_cta: "Ürünleri keşfet", open_play: "Google Play'de aç",
+        games_h: "Oyun ve uygulamalarımız", games_sub: "Her ürünün Google Play sayfasına ve gizlilik politikasına buradan ulaşabilirsiniz.",
         tl_h: "Yayın takvimi", tl_sub: "Google Play'e çıkış tarihlerimiz.", about_sub: "Çanakkale'den, mobil için.",
-        about_p: "Oyunlarımızı kısa seanslarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
+        about_p: "Ürünlerimizi kısa kullanımlarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
         logo_alt: "Hexlume Games logosu", m1_alt: "Hexlume Games maskotu başparmağını kaldırıyor", m2_alt: "Hex zıplıyor", m3_alt: "Hex işaret ediyor", m4_alt: "Hex göz kırpıyor",
         soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
       },
       en: {
-        title: "Hexlume Games – Android Games", desc: "Hexlume Games is an independent Android game studio. Minesweeper, Sudoku, Solitaire, Flow Sort and more on Google Play.",
-        nav_games: "Games", nav_tl: "Timeline", nav_about: "About", nav_contact: "Contact",
-        hero_p: "We are an independent Android game studio. From classic puzzles to card and dice games, we make light, smooth games.", hero_cta: "Explore the games", open_play: "Open on Google Play",
-        games_h: "Our games", games_sub: "Find each game's Google Play page and privacy policy here.",
-        tl_h: "Release timeline", tl_sub: "When our games launched on Google Play.", about_sub: "From Çanakkale, for mobile.",
-        about_p: "We design our games to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
+        title: "Hexlume Games – Android Games & Apps", desc: "Hexlume Games is an independent Android studio. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica and more on Google Play.",
+        nav_games: "Products", nav_tl: "Timeline", nav_about: "About", nav_contact: "Contact",
+        hero_p: "We are an independent Android studio. From classic puzzles and card and dice games to apps that simplify everyday tasks, we make light, smooth products.", hero_cta: "Explore our products", open_play: "Open on Google Play",
+        games_h: "Our games & apps", games_sub: "Find each product's Google Play page and privacy policy here.",
+        tl_h: "Release timeline", tl_sub: "When our products launched on Google Play.", about_sub: "From Çanakkale, for mobile.",
+        about_p: "We design our products to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
         logo_alt: "Hexlume Games logo", m1_alt: "Hexlume Games mascot giving a thumbs up", m2_alt: "Hex jumping", m3_alt: "Hex pointing", m4_alt: "Hex winking",
         soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
       }
     };
     // id, name, icon, color, tag{tr,en}, ISO date, desc{tr,en}, play package (null = not live), privacy folder
     const games = [
+      ["duerica", "Duerica: Team Task Manager", "duerica", "#1e7bff", { tr: "Verimlilik", en: "Productivity" }, "2026-11-02", { tr: "Son tarihleri ve tekrarlayan görevleri tek yerde takip et, günlük yapılacaklar listeni ekibinle paylaş. Hesap gerekmez, 13 dil.", en: "Track deadlines and recurring tasks in one place and share your daily to-do list with your team. No account needed, 13 languages." }, "duerica", "duerica-privacy"],
       ["luckyslots", "Lucky Slots: Vegas Casino", "luckyslots", "#a43bff", { tr: "Casino · 18+", en: "Casino · 18+" }, "2026-09-15", { tr: "Klasik 3 makaralı slot eğlencesi, çevrimdışı oynanır. Gerçek para yok; yalnızca 18 yaş üstü için, eğlence amaçlı.", en: "Classic 3-reel slot fun that works offline. No real money: for adults 18+, for entertainment only." }, "luckyslots", "luckyslots-privacy"],
       ["jackpotdice", "Jackpot Dice: Roll & Score", "jackpotdice", "#f1c40f", { tr: "Zar", en: "Dice" }, "2026-07-12", { tr: "5 zar at, 13 kategoriyi doldur. Günlük görev, seri takibi ve 20 dil desteği.", en: "Roll 5 dice and fill 13 categories. Daily challenge, streak tracking and 20 languages." }, "jackpotdice", "jackpotdice-privacy"],
       ["flowsort", "Flow Sort: Color Tube Puzzle", "flowsort", "#ff3fd0", { tr: "Bulmaca", en: "Puzzle" }, "2026-06-15", { tr: "Renkli sıvıları tüplere ayır. 500 seviye, günlük meydan okuma, süre baskısı yok.", en: "Sort colorful liquids into tubes. 500 levels, a daily challenge and no time pressure." }, "flowsort", "flowsort-privacy"],
