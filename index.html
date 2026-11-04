@@ -449,6 +449,136 @@
       fill: currentColor
     }
 
+    .soon-sec {
+      padding: 12px 0 8px
+    }
+
+    .promo {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 34px;
+      align-items: center;
+      padding: 34px 38px;
+      border-radius: 24px;
+      border: 1px solid #1b4f86;
+      background: radial-gradient(600px 260px at 0 0, #1d78c455, transparent 70%), linear-gradient(160deg, #0a2c52, #06152b 70%);
+      box-shadow: 0 0 50px #0a4a8a33
+    }
+
+    .promo:after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 22px;
+      background: repeating-linear-gradient(90deg, #8a6a3c 0 14px, #6d5230 14px 28px);
+      opacity: .55
+    }
+
+    .promo .big {
+      width: 176px;
+      height: 176px;
+      border-radius: 22px;
+      image-rendering: pixelated;
+      box-shadow: 0 0 0 2px #ffffff22, 0 0 40px #ff6a5a44;
+      animation: bob 4s ease-in-out infinite
+    }
+
+    @keyframes bob {
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px
+    }
+
+    .pill span {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px
+    }
+
+    .pill .a {
+      background: linear-gradient(90deg, var(--blue), var(--cyan));
+      color: #02111a
+    }
+
+    .pill .b {
+      border: 1px solid #3a78b8;
+      color: #9fd0ff
+    }
+
+    .promo h3 {
+      font-size: clamp(18px, 2.6vw, 26px);
+      margin-bottom: 10px
+    }
+
+    .promo p {
+      color: #b9c8e8;
+      max-width: 56ch
+    }
+
+    .promo .acts {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 18px;
+      padding-bottom: 10px
+    }
+
+    .promo .acts .btn {
+      margin: 0
+    }
+
+    .promo .pp {
+      color: #9fb2d8;
+      text-decoration: none;
+      font-size: 14px
+    }
+
+    .promo .pp:hover {
+      color: var(--text)
+    }
+
+    @media(max-width:760px) {
+      .promo {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 26px 20px 34px;
+        gap: 18px;
+        justify-items: center
+      }
+
+      .promo .big {
+        width: 132px;
+        height: 132px
+      }
+
+      .promo .acts {
+        justify-content: center
+      }
+
+      .promo .acts .btn {
+        display: block
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      .promo .big {
+        animation: none
+      }
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 30px 0;
@@ -634,6 +764,25 @@
       <img class="m" src="assets/mascot-1.webp" data-ia="m1_alt" alt="Hexlume Games maskotu başparmağını kaldırıyor">
     </div>
 
+    <section class="soon-sec" id="yakinda">
+      <div class="wrap">
+        <article class="promo" aria-labelledby="dp-title">
+          <img class="big" src="assets/deeppatrol-lg.webp" width="176" height="176" data-ia="dp_alt"
+            alt="Deep Patrol ikonu">
+          <div>
+            <div class="pill"><span class="a" data-i="dp_soon">Yakında</span><span class="b" data-i="dp_test">Kapalı
+                testte</span></div>
+            <h3 id="dp-title">Deep Patrol: Submarine Dive</h3>
+            <p data-i="dp_desc">Retro piksel sanatıyla hazırlanan bir denizaltı macerası: derinlere dal, madeni paraları
+              topla. Şu anda kapalı testte; Google Play'e çok yakında geliyor.</p>
+            <div class="acts"><a class="btn" href="#iletisim" data-i="dp_cta">Haberdar olmak için takip edin</a><a
+                class="pp" href="https://hexlumegames-cpu.github.io/deeppatrol-privacy/privacy-policy.html"
+                rel="noopener" data-i="privacy">Gizlilik politikası</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="oyunlar">
       <div class="wrap">
         <h2 data-i="games_h">Oyunlarımız</h2>
@@ -714,7 +863,7 @@
         tl_h: "Yayın takvimi", tl_sub: "Google Play'e çıkış tarihlerimiz.", about_sub: "Çanakkale'den, mobil için.",
         about_p: "Ürünlerimizi kısa kullanımlarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
         logo_alt: "Hexlume Games logosu", m1_alt: "Hexlume Games maskotu başparmağını kaldırıyor", m2_alt: "Hex zıplıyor", m3_alt: "Hex işaret ediyor", m4_alt: "Hex göz kırpıyor",
-        follow: "Bizi takip edin", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
+        follow: "Bizi takip edin", dp_soon: "Yakında", dp_test: "Kapalı testte", dp_desc: "Retro piksel sanatıyla hazırlanan bir denizaltı macerası: derinlere dal, madeni paraları topla. Şu anda kapalı testte; Google Play'e çok yakında geliyor.", dp_cta: "Haberdar olmak için takip edin", dp_alt: "Deep Patrol ikonu", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
       },
       en: {
         title: "Hexlume Games – Android Games & Apps", desc: "Hexlume Games is an independent Android studio. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica and more on Google Play.",
@@ -724,7 +873,7 @@
         tl_h: "Release timeline", tl_sub: "When our products launched on Google Play.", about_sub: "From Çanakkale, for mobile.",
         about_p: "We design our products to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
         logo_alt: "Hexlume Games logo", m1_alt: "Hexlume Games mascot giving a thumbs up", m2_alt: "Hex jumping", m3_alt: "Hex pointing", m4_alt: "Hex winking",
-        follow: "Follow us", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
+        follow: "Follow us", dp_soon: "Coming soon", dp_test: "Closed testing", dp_desc: "A retro pixel-art submarine adventure: dive deep and collect coins. It is in closed testing now and coming to Google Play very soon.", dp_cta: "Follow for updates", dp_alt: "Deep Patrol icon", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
       }
     };
     // id, name, icon, color, tag{tr,en}, ISO date, desc{tr,en}, play package (null = not live), privacy folder
