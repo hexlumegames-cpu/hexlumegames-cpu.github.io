@@ -280,49 +280,6 @@
       color: var(--text)
     }
 
-    .tl {
-      list-style: none;
-      padding: 0;
-      border-left: 2px solid var(--line);
-      margin-left: 6px
-    }
-
-    .tl li {
-      position: relative;
-      padding: 0 0 16px 22px
-    }
-
-    .tl li:before {
-      content: "";
-      position: absolute;
-      left: -7px;
-      top: 9px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 10px var(--blue)
-    }
-
-    .tl li.soon-i:before {
-      background: none;
-      border: 2px solid var(--cyan)
-    }
-
-    .tl time {
-      color: var(--cyan);
-      font-weight: 600;
-      margin-right: 10px
-    }
-
-    .tl a {
-      text-decoration: none
-    }
-
-    .tl a:hover {
-      color: var(--cyan)
-    }
-
     .game h3 {
       font-size: 14px;
       line-height: 1.35
@@ -705,6 +662,66 @@
       }
     }
 
+    .chips {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px
+    }
+
+    .chips li {
+      font-size: 12px;
+      color: #b6c4ee;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 10px;
+      background: #0b0f2a
+    }
+
+    .how {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .how>div {
+      background: linear-gradient(180deg, var(--card), var(--bg2));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px
+    }
+
+    .how h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+      color: var(--cyan)
+    }
+
+    .how p {
+      color: var(--mute);
+      font-size: 15.5px
+    }
+
+    .how .mail {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .how .mail:hover {
+      border-color: var(--cyan);
+      color: var(--cyan)
+    }
+
+    @media(max-width:860px) {
+      .how {
+        grid-template-columns: 1fr
+      }
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 30px 0;
@@ -813,15 +830,6 @@
         max-width: none
       }
 
-      .tl li {
-        padding-bottom: 14px
-      }
-
-      .tl time {
-        display: block;
-        font-size: 14px
-      }
-
       footer .wrap {
         flex-direction: column;
         text-align: center;
@@ -861,7 +869,7 @@
   <header>
     <div class="wrap">
       <a href="#top" aria-label="Hexlume Games"><img src="assets/logo-icon.webp" alt="Hexlume Games"></a>
-      <nav><a href="#oyunlar" data-i="nav_games">Oyunlar</a><a href="#takvim" data-i="nav_tl">Takvim</a><a
+      <nav><a href="#oyunlar" data-i="nav_games">Oyunlar</a><a href="#nasil" data-i="nav_tl">Yaklaşım</a><a
           href="#hakkinda" data-i="nav_about">Hakkımızda</a><a href="#iletisim" data-i="nav_contact">İletişim</a><span
           class="lang" role="group" aria-label="Language"><button type="button" data-l="tr"
             aria-pressed="true">TR</button><button type="button" data-l="en" aria-pressed="false">EN</button></span>
@@ -913,11 +921,24 @@
       </div>
     </section>
 
-    <section id="takvim">
+    <section id="nasil">
       <div class="wrap">
-        <h2 data-i="tl_h">Yayın takvimi</h2>
-        <p class="sub" data-i="tl_sub">Google Play'e çıkış tarihlerimiz.</p>
-        <ol class="tl" id="tl"></ol>
+        <h2 data-i="how_h">Nasıl çalışıyoruz</h2>
+        <p class="sub" data-i="how_sub">Küçük bir stüdyo olarak sade ve odaklı çalışıyoruz.</p>
+        <div class="how">
+          <div>
+            <h3 data-i="how1_t">Ortak altyapı</h3>
+            <p data-i="how1_p"></p>
+          </div>
+          <div>
+            <h3 data-i="how2_t">Odaklı oyunlar</h3>
+            <p data-i="how2_p"></p>
+          </div>
+          <div>
+            <h3 data-i="how3_t">Sizi dinliyoruz</h3>
+            <p data-i="how3_p"></p><a class="mail" href="mailto:hexlume.games@gmail.com">hexlume.games@gmail.com</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -987,29 +1008,29 @@
     const T = {
       tr: {
         title: "Hexlume Games – Android Oyunları ve Uygulamaları", desc: "Hexlume Games bağımsız bir Android stüdyosudur. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica ve daha fazlası Google Play'de.",
-        nav_games: "Ürünler", nav_tl: "Takvim", nav_about: "Hakkımızda", nav_contact: "İletişim",
+        nav_games: "Ürünler", nav_tl: "Yaklaşım", nav_about: "Hakkımızda", nav_contact: "İletişim",
         hero_p: "Bağımsız bir Android stüdyosuyuz. Klasik bulmacalardan kart ve zar oyunlarına, günlük işleri kolaylaştıran uygulamalara kadar hafif ve akıcı ürünler yapıyoruz.", hero_cta: "Ürünleri keşfet", open_play: "Google Play'de aç",
         games_h: "Oyun ve uygulamalarımız", games_sub: "Her ürünün Google Play sayfasına ve gizlilik politikasına buradan ulaşabilirsiniz.",
-        tl_h: "Yayın takvimi", tl_sub: "Google Play'e çıkış tarihlerimiz.", about_sub: "Çanakkale'den, mobil için.",
+        about_sub: "Çanakkale'den, mobil için.",
         about_p: "Ürünlerimizi kısa kullanımlarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
         logo_alt: "Hexlume Games logosu", m1_alt: "Hexlume Games maskotu başparmağını kaldırıyor", m2_alt: "Hex zıplıyor", m3_alt: "Hex işaret ediyor", m4_alt: "Hex göz kırpıyor",
-        follow: "Bizi takip edin", follow_sub: "Yeni oyunlar, güncellemeler ve duyurular için sosyal medyada bizimle olun.", dp_soon: "Yakında", dp_test: "Kapalı testte", dp_desc: "Retro piksel sanatıyla hazırlanan bir denizaltı macerası: derinlere dal, madeni paraları topla. Şu anda kapalı testte; Google Play'e çok yakında geliyor.", dp_cta: "Haberdar olmak için takip edin", dp_alt: "Deep Patrol ikonu", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
+        how_h: "Nasıl çalışıyoruz", how_sub: "Küçük bir stüdyo olarak sade ve odaklı çalışıyoruz.", how1_t: "Ortak altyapı", how1_p: "Oyunlarımız ortak bir altyapı üzerine kuruluyor: çoklu dil desteği ile gizlilik ve izin yönetimi gibi temel parçalar her oyunda aynı yerden geliyor. Böylece her oyunun oynanışına daha çok zaman ayırabiliyoruz.", how2_t: "Odaklı oyunlar", how2_p: "Kuralları herkesçe bilinen klasik türlere odaklanıyoruz. Her oyun tek bir şeyi iyi yapmayı hedefliyor: açması, oynaması ve bırakması kolay olsun.", how3_t: "Sizi dinliyoruz", how3_p: "Önerileriniz ve geri bildirimleriniz bizim için değerli. Bize şu adresten yazabilirsiniz:", follow: "Bizi takip edin", follow_sub: "Yeni oyunlar, güncellemeler ve duyurular için sosyal medyada bizimle olun.", dp_soon: "Yakında", dp_test: "Kapalı testte", dp_desc: "Retro piksel sanatıyla hazırlanan bir denizaltı macerası: derinlere dal, madeni paraları topla. Şu anda kapalı testte; Google Play'e çok yakında geliyor.", dp_cta: "Haberdar olmak için takip edin", dp_alt: "Deep Patrol ikonu", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
       },
       en: {
         title: "Hexlume Games – Android Games & Apps", desc: "Hexlume Games is an independent Android studio. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica and more on Google Play.",
-        nav_games: "Products", nav_tl: "Timeline", nav_about: "About", nav_contact: "Contact",
+        nav_games: "Products", nav_tl: "Approach", nav_about: "About", nav_contact: "Contact",
         hero_p: "We are an independent Android studio. From classic puzzles and card and dice games to apps that simplify everyday tasks, we make light, smooth products.", hero_cta: "Explore our products", open_play: "Open on Google Play",
         games_h: "Our games & apps", games_sub: "Find each product's Google Play page and privacy policy here.",
-        tl_h: "Release timeline", tl_sub: "When our products launched on Google Play.", about_sub: "From Çanakkale, for mobile.",
+        about_sub: "From Çanakkale, for mobile.",
         about_p: "We design our products to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
         logo_alt: "Hexlume Games logo", m1_alt: "Hexlume Games mascot giving a thumbs up", m2_alt: "Hex jumping", m3_alt: "Hex pointing", m4_alt: "Hex winking",
-        follow: "Follow us", follow_sub: "Follow us on social media for new games, updates and announcements.", dp_soon: "Coming soon", dp_test: "Closed testing", dp_desc: "A retro pixel-art submarine adventure: dive deep and collect coins. It is in closed testing now and coming to Google Play very soon.", dp_cta: "Follow for updates", dp_alt: "Deep Patrol icon", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
+        how_h: "How we work", how_sub: "We keep things simple and focused as a small studio.", how1_t: "Shared foundation", how1_p: "Our games are built on a shared foundation: multi-language support and privacy and consent handling come from the same place in every game. That lets us spend more time on each game's gameplay.", how2_t: "Focused games", how2_p: "We focus on classic genres everyone already knows. Each game aims to do one thing well: easy to open, easy to play and easy to put down.", how3_t: "We listen", how3_p: "Your suggestions and feedback matter to us. You can write to us at:", follow: "Follow us", follow_sub: "Follow us on social media for new games, updates and announcements.", dp_soon: "Coming soon", dp_test: "Closed testing", dp_desc: "A retro pixel-art submarine adventure: dive deep and collect coins. It is in closed testing now and coming to Google Play very soon.", dp_cta: "Follow for updates", dp_alt: "Deep Patrol icon", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
       }
     };
     // id, name, icon, color, tag{tr,en}, ISO date, desc{tr,en}, play package (null = not live), privacy folder
     const games = [
       ["duerica", "Duerica: Team Task Manager", "duerica", "#1e7bff", { tr: "Verimlilik", en: "Productivity" }, "2026-11-02", { tr: "Son tarihleri ve tekrarlayan görevleri tek yerde takip et, günlük yapılacaklar listeni ekibinle paylaş. Hesap gerekmez, 13 dil.", en: "Track deadlines and recurring tasks in one place and share your daily to-do list with your team. No account needed, 13 languages." }, "duerica", "duerica-privacy"],
-      ["luckyslots", "Lucky Slots: Vegas Casino", "luckyslots", "#a43bff", { tr: "Casino · 18+", en: "Casino · 18+" }, "2026-09-15", { tr: "Klasik 3 makaralı slot eğlencesi, çevrimdışı oynanır. Gerçek para yok; yalnızca 18 yaş üstü için, eğlence amaçlı.", en: "Classic 3-reel slot fun that works offline. No real money: for adults 18+, for entertainment only." }, "luckyslots", "luckyslots-privacy"],
+      ["luckyslots", "Lucky Slots: Vegas Casino", "luckyslots", "#a43bff", { tr: "Slot", en: "Slots" }, "2026-09-15", { tr: "Altın zincirli domuzun sunduğu klasik slot eğlencesi. Gerçek para yok, tamamen eğlence amaçlı. Yetişkinler için (18+).", en: "Classic slot fun hosted by a gold-chain-wearing pig. No real money, just for fun. For adults (18+)." }, "luckyslots", "luckyslots-privacy"],
       ["jackpotdice", "Jackpot Dice: Roll & Score", "jackpotdice", "#f1c40f", { tr: "Zar", en: "Dice" }, "2026-07-12", { tr: "5 zar at, 13 kategoriyi doldur. Günlük görev, seri takibi ve 20 dil desteği.", en: "Roll 5 dice and fill 13 categories. Daily challenge, streak tracking and 20 languages." }, "jackpotdice", "jackpotdice-privacy"],
       ["flowsort", "Flow Sort: Color Tube Puzzle", "flowsort", "#ff3fd0", { tr: "Bulmaca", en: "Puzzle" }, "2026-06-15", { tr: "Renkli sıvıları tüplere ayır. 500 seviye, günlük meydan okuma, süre baskısı yok.", en: "Sort colorful liquids into tubes. 500 levels, a daily challenge and no time pressure." }, "flowsort", "flowsort-privacy"],
       ["sudoku9", "Sudoku 9", "sudoku9", "#ff9f1c", { tr: "Bulmaca", en: "Puzzle" }, "2026-06-06", { tr: "Klasik 9×9 sudoku: 5 zorluk, günlük görev, notlar ve ipuçları. 22 dil, çevrimdışı.", en: "Classic 9×9 Sudoku: 5 difficulty levels, daily challenge, notes and hints. 22 languages, works offline." }, "sudoku9", "sudoku9-privacy"],
@@ -1019,19 +1040,29 @@
       ["solitaire", "Solitaire: Classic Card Game", "solitaire", "#1fa35c", { tr: "Kart", en: "Card" }, "2026-03-27", { tr: "Klondike solitaire: 1 veya 3 kart çekme, sınırsız geri alma, çevrimdışı.", en: "Klondike Solitaire: draw 1 or 3 cards, unlimited undo, works offline." }, "solitaire", "solitaire-privacy"],
       ["sudoku16", "Sudoku 16", "sudoku16", "#3d7bff", { tr: "Bulmaca", en: "Puzzle" }, "2026-02-24", { tr: "16×16 dev ızgara, 0-9 ve A-F karakterleriyle. 4 zorluk seviyesi ve ipucu.", en: "A giant 16×16 grid played with 0-9 and A-F. 4 difficulty levels and hints." }, "sudoku16", "sudoku16-privacy"]
     ];
+    const CHIPS = {
+      duerica: { tr: ["13 dil", "Hesap gerekmez", "Veriler cihazda"], en: ["13 languages", "No account needed", "Data stays on device"] },
+      luckyslots: { tr: ["Çevrimdışı", "3 makaralı", "Sanal jetonlar"], en: ["Works offline", "3 reels", "Virtual coins"] },
+      jackpotdice: { tr: ["20 dil", "Çevrimdışı", "Günlük görev"], en: ["20 languages", "Works offline", "Daily challenge"] },
+      flowsort: { tr: ["500 seviye", "10 dil", "Çevrimdışı"], en: ["500 levels", "10 languages", "Works offline"] },
+      sudoku9: { tr: ["22 dil", "5 zorluk", "Çevrimdışı"], en: ["22 languages", "5 difficulties", "Works offline"] },
+      minesweeper: { tr: ["3 zorluk", "5 renk teması", "Skor tablosu"], en: ["3 difficulties", "5 color themes", "Leaderboard"] },
+      elementalist: { tr: ["Çevrimdışı", "Enerji sınırı yok", "Onlarca element"], en: ["Works offline", "No energy limits", "Dozens of elements"] },
+      onemoretry: { tr: ["4 dil", "Tek dokunuş", "Skor yarışı"], en: ["4 languages", "One-tap play", "Score chasing"] },
+      solitaire: { tr: ["1 veya 3 kart", "Sınırsız geri alma", "Çevrimdışı"], en: ["Draw 1 or 3", "Unlimited undo", "Works offline"] },
+      sudoku16: { tr: ["16×16", "4 zorluk", "İpucu"], en: ["16×16 grid", "4 difficulties", "Hints"] }
+    };
+    const chips = (id, l) => CHIPS[id] ? `<ul class="chips">${CHIPS[id][l].map(c => `<li>${c}</li>`).join("")}</ul>` : "";
     function render(l) {
       const t = T[l];
       document.documentElement.lang = l; document.title = t.title;
       document.querySelector('meta[name=description]').content = t.desc;
       document.querySelectorAll('[data-i]').forEach(e => e.textContent = t[e.dataset.i]);
       document.querySelectorAll('[data-ia]').forEach(e => e.alt = t[e.dataset.ia]);
-      const fmt = iso => new Date(iso + "T12:00:00").toLocaleDateString(t.loc, { day: "numeric", month: "long", year: "numeric" });
       document.getElementById("grid").innerHTML = games.map(([id, n, ic, c, tag, iso, d, pkg, pp]) =>
-        `<article class="game" id="${id}" style="--g:${c}66"><div class="top"><img class="ico" src="assets/icon-${ic}.webp" alt="${n} ${t.icon}" width="72" height="72" loading="lazy"><div class="meta"><span class="tag">${tag[l]}</span><span class="date">${pkg ? fmt(iso) : t.soon}</span></div></div>
-  <h3>${n}</h3><p>${d[l]}</p>
+        `<article class="game" id="${id}" style="--g:${c}66"><div class="top"><img class="ico" src="assets/icon-${ic}.webp" alt="${n} ${t.icon}" width="72" height="72" loading="lazy"><div class="meta"><span class="tag">${tag[l]}</span>${pkg ? "" : `<span class="date">${t.soon}</span>`}</div></div>
+  <h3>${n}</h3><p>${d[l]}</p>${chips(id, l)}
   ${pkg ? `<div class="links"><a class="play" href="${P}${pkg}" rel="noopener">${t.open_play}</a><a class="pp" href="${PP}${pp}/privacy-policy.html" rel="noopener">${t.privacy}</a></div>` : `<span class="soon">${t.soon_play}</span>`}</article>`).join("");
-      document.getElementById("tl").innerHTML = games.slice().reverse().map(([id, n, , , , iso, , pkg]) =>
-        `<li class="${pkg ? "" : "soon-i"}"><time datetime="${iso}">${fmt(iso)}</time><a href="#${id}">${n}</a>${pkg ? "" : " " + t.soon_p}</li>`).join("");
       document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
     }
     let lang = (navigator.language || "tr").toLowerCase().startsWith("tr") ? "tr" : "en";
