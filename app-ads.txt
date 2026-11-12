@@ -1,1 +1,11 @@
-google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.duerica
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.minesweeper
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.onemoretry
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.sudoku9
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.elementalist
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.sudoku16
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.flowsort
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.solitaire
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.luckyslots
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.jackpotdice
+google.com, pub-8007909982266663, DIRECT, f08c47fec0942fa0 # https://play.google.com/store/apps/details?id=com.hexlumegames.deeppatrol
