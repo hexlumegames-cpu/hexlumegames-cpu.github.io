@@ -738,6 +738,93 @@
       }
     }
 
+    .soon-sec h2 {
+      margin-bottom: 18px
+    }
+
+    .soon-card {
+      margin-top: 22px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 30px;
+      padding: 24px 28px 34px;
+      background: radial-gradient(600px 260px at 100% 0, #a4511e55, transparent 70%), linear-gradient(160deg, #2a1240, #12091f 70%);
+      border-color: #6a3a8a;
+      box-shadow: 0 0 50px #7a2ab033
+    }
+
+    .soon-card:after {
+      background: repeating-linear-gradient(90deg, #8a4a2a 0 14px, #6a3a20 14px 28px)
+    }
+
+    .soon-card .feat {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 0 0 1px #ffffff22, 0 10px 34px #0008
+    }
+
+    .soon-card .pill .b {
+      border-color: #8a5ab8;
+      color: #d9b8ff
+    }
+
+    .soon-card .chips li {
+      background: #160b26;
+      border-color: #6a3a8a;
+      color: #e0c8ff
+    }
+
+    .ks-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px
+    }
+
+    .ks-head .mini {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      box-shadow: 0 0 0 1px #ffffff22
+    }
+
+    .ks-head h3 {
+      margin: 0
+    }
+
+    .soon-card p {
+      color: #cdbfe6
+    }
+
+    @media(max-width:860px) {
+      .soon-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 18px;
+        padding: 20px 18px 34px
+      }
+
+      .soon-card .ks-head {
+        justify-content: center
+      }
+
+      .soon-card .pill {
+        justify-content: center
+      }
+
+      .soon-card .chips {
+        justify-content: center
+      }
+
+      .soon-card .acts {
+        justify-content: center
+      }
+
+      .soon-card .acts .btn {
+        display: block
+      }
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 30px 0;
@@ -911,6 +998,7 @@
 
     <section class="soon-sec" id="yakinda">
       <div class="wrap">
+        <h2 data-i="spot_h">Yeni ve yakında</h2>
         <article class="promo" aria-labelledby="dp-title">
           <img class="big" src="assets/deeppatrol-lg.webp" width="176" height="176" data-ia="dp_alt"
             alt="Deep Patrol ikonu">
@@ -927,6 +1015,21 @@
                 data-i="dp_get">Google Play'de indir</a><a class="pp"
                 href="https://hexlumegames-cpu.github.io/deeppatrol-privacy/privacy-policy.html" rel="noopener"
                 data-i="privacy">Gizlilik politikası</a></div>
+          </div>
+        </article>
+        <article class="promo soon-card" aria-labelledby="ks-title">
+          <img class="feat" src="assets/kangarooslots-feature.webp" width="1024" height="500" loading="lazy"
+            data-ia="ks_alt" alt="Kangaroo Slots oyun görseli">
+          <div class="ks-body">
+            <div class="pill"><span class="a" data-i="ks_soon">Yakında</span><span class="b" data-i="ks_test">Kapalı
+                testte</span></div>
+            <div class="ks-head"><img class="mini" src="assets/icon-kangarooslots.webp" width="56" height="56" alt=""
+                aria-hidden="true">
+              <h3 id="ks-title">Kangaroo Slots</h3>
+            </div>
+            <p data-i="ks_desc"></p>
+            <ul class="chips" id="ksChips"></ul>
+            <div class="acts"><a class="btn" href="#takip" data-i="ks_cta">Haberdar olmak için takip edin</a></div>
           </div>
         </article>
       </div>
@@ -1034,7 +1137,7 @@
         about_sub: "Çanakkale'den, mobil için.",
         about_p: "Ürünlerimizi kısa kullanımlarda bile keyif verecek şekilde tasarlıyoruz: hızlı açılış, net kontroller ve birçok dilde destek. Maskotumuz Hex, her oyunda sizinle.",
         logo_alt: "Hexlume Games logosu", m1_alt: "Hexlume Games maskotu başparmağını kaldırıyor", m2_alt: "Hex zıplıyor", m3_alt: "Hex işaret ediyor", m4_alt: "Hex göz kırpıyor",
-        how_h: "Nasıl çalışıyoruz", how_sub: "Küçük bir stüdyo olarak sade ve odaklı çalışıyoruz.", how1_t: "Ortak altyapı", how1_p: "Oyunlarımız ortak bir altyapı üzerine kuruluyor: çoklu dil desteği ile gizlilik ve izin yönetimi gibi temel parçalar her oyunda aynı yerden geliyor. Böylece her oyunun oynanışına daha çok zaman ayırabiliyoruz.", how2_t: "Odaklı oyunlar", how2_p: "Kuralları herkesçe bilinen klasik türlere odaklanıyoruz. Her oyun tek bir şeyi iyi yapmayı hedefliyor: açması, oynaması ve bırakması kolay olsun.", how3_t: "Sizi dinliyoruz", how3_p: "Önerileriniz ve geri bildirimleriniz bizim için değerli. Bize şu adresten yazabilirsiniz:", follow: "Bizi takip edin", follow_sub: "Yeni oyunlar, güncellemeler ve duyurular için sosyal medyada bizimle olun.", dp_new: "Yeni", dp_tag: "Piksel sanatı", dp_get: "Google Play'de indir", dp_desc: "Basılı tut ve dal, bırak ve yüzeye çık. Oksijenin bitmeden altınları topla; mayınlardan, torpidolardan, kayalardan ve fırkateynlerden kaç. Kazandığın altınlarla hangardaki denizaltıların kilidini aç.", dp_alt: "Deep Patrol ikonu", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
+        how_h: "Nasıl çalışıyoruz", how_sub: "Küçük bir stüdyo olarak sade ve odaklı çalışıyoruz.", how1_t: "Ortak altyapı", how1_p: "Oyunlarımız ortak bir altyapı üzerine kuruluyor: çoklu dil desteği ile gizlilik ve izin yönetimi gibi temel parçalar her oyunda aynı yerden geliyor. Böylece her oyunun oynanışına daha çok zaman ayırabiliyoruz.", how2_t: "Odaklı oyunlar", how2_p: "Kuralları herkesçe bilinen klasik türlere odaklanıyoruz. Her oyun tek bir şeyi iyi yapmayı hedefliyor: açması, oynaması ve bırakması kolay olsun.", how3_t: "Sizi dinliyoruz", how3_p: "Önerileriniz ve geri bildirimleriniz bizim için değerli. Bize şu adresten yazabilirsiniz:", spot_h: "Yeni ve yakında", ks_soon: "Yakında", ks_test: "Kapalı testte", ks_alt: "Kangaroo Slots: Avustralya outback temalı slot oyunu", ks_cta: "Haberdar olmak için takip edin", ks_desc: "Avustralya'nın outback'inde geçen 5 makaralı, 25 hatlı slot macerası. Joker kanguru ve Uluru sembolüyle ücretsiz dönüşler kazan. Sanal jetonlarla oynanır; gerçek para yok, tamamen eğlence amaçlı. Yetişkinler için (18+).", follow: "Bizi takip edin", follow_sub: "Yeni oyunlar, güncellemeler ve duyurular için sosyal medyada bizimle olun.", dp_new: "Yeni", dp_tag: "Piksel sanatı", dp_get: "Google Play'de indir", dp_desc: "Basılı tut ve dal, bırak ve yüzeye çık. Oksijenin bitmeden altınları topla; mayınlardan, torpidolardan, kayalardan ve fırkateynlerden kaç. Kazandığın altınlarla hangardaki denizaltıların kilidini aç.", dp_alt: "Deep Patrol ikonu", visits: "Ziyaretçi", soon: "Yakında", soon_play: "Google Play'de yakında", soon_p: "(yakında)", privacy: "Gizlilik politikası", icon: "ikonu", loc: "tr-TR"
       },
       en: {
         title: "Hexlume Games – Android Games & Apps", desc: "Hexlume Games is an independent Android studio. Minesweeper, Sudoku, Solitaire, Flow Sort, Duerica and more on Google Play.",
@@ -1044,7 +1147,7 @@
         about_sub: "From Çanakkale, for mobile.",
         about_p: "We design our products to be enjoyable even in short sessions: fast start-up, clear controls and support for many languages. Our mascot Hex joins you in every game.",
         logo_alt: "Hexlume Games logo", m1_alt: "Hexlume Games mascot giving a thumbs up", m2_alt: "Hex jumping", m3_alt: "Hex pointing", m4_alt: "Hex winking",
-        how_h: "How we work", how_sub: "We keep things simple and focused as a small studio.", how1_t: "Shared foundation", how1_p: "Our games are built on a shared foundation: multi-language support and privacy and consent handling come from the same place in every game. That lets us spend more time on each game's gameplay.", how2_t: "Focused games", how2_p: "We focus on classic genres everyone already knows. Each game aims to do one thing well: easy to open, easy to play and easy to put down.", how3_t: "We listen", how3_p: "Your suggestions and feedback matter to us. You can write to us at:", follow: "Follow us", follow_sub: "Follow us on social media for new games, updates and announcements.", dp_new: "New", dp_tag: "Pixel art", dp_get: "Get it on Google Play", dp_desc: "Hold to dive, release to surface. Collect gold before your oxygen runs out and dodge mines, torpedoes, rocks and frigates. Spend your gold to unlock new submarines in the hangar.", dp_alt: "Deep Patrol icon", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
+        how_h: "How we work", how_sub: "We keep things simple and focused as a small studio.", how1_t: "Shared foundation", how1_p: "Our games are built on a shared foundation: multi-language support and privacy and consent handling come from the same place in every game. That lets us spend more time on each game's gameplay.", how2_t: "Focused games", how2_p: "We focus on classic genres everyone already knows. Each game aims to do one thing well: easy to open, easy to play and easy to put down.", how3_t: "We listen", how3_p: "Your suggestions and feedback matter to us. You can write to us at:", spot_h: "New and coming soon", ks_soon: "Coming soon", ks_test: "Closed testing", ks_alt: "Kangaroo Slots: an Australian outback slot game", ks_cta: "Follow for updates", ks_desc: "A 5-reel, 25-payline slot adventure in the Australian outback. Land the wild kangaroo and the Uluru scatter to win free spins. Played with virtual credits: no real money, just for fun. For adults (18+).", follow: "Follow us", follow_sub: "Follow us on social media for new games, updates and announcements.", dp_new: "New", dp_tag: "Pixel art", dp_get: "Get it on Google Play", dp_desc: "Hold to dive, release to surface. Collect gold before your oxygen runs out and dodge mines, torpedoes, rocks and frigates. Spend your gold to unlock new submarines in the hangar.", dp_alt: "Deep Patrol icon", visits: "Visitors", soon: "Coming soon", soon_play: "Coming soon to Google Play", soon_p: "(coming soon)", privacy: "Privacy policy", icon: "icon", loc: "en-US"
       }
     };
     // id, name, icon, color, tag{tr,en}, ISO date, desc{tr,en}, play package (null = not live), privacy folder
@@ -1061,6 +1164,10 @@
       ["solitaire", "Solitaire: Classic Card Game", "solitaire", "#1fa35c", { tr: "Kart", en: "Card" }, "2026-03-27", { tr: "Klondike solitaire: 1 veya 3 kart çekme, sınırsız geri alma, çevrimdışı.", en: "Klondike Solitaire: draw 1 or 3 cards, unlimited undo, works offline." }, "solitaire", "solitaire-privacy"],
       ["sudoku16", "Sudoku 16", "sudoku16", "#3d7bff", { tr: "Bulmaca", en: "Puzzle" }, "2026-02-24", { tr: "16×16 dev ızgara, 0-9 ve A-F karakterleriyle. 4 zorluk seviyesi ve ipucu.", en: "A giant 16×16 grid played with 0-9 and A-F. 4 difficulty levels and hints." }, "sudoku16", "sudoku16-privacy"]
     ];
+    const KSCHIPS = {
+      tr: ["13 dil", "5 makara · 25 hat", "Ücretsiz dönüşler", "Sanal jetonlar", "Reklam içerir"],
+      en: ["13 languages", "5 reels · 25 paylines", "Free spins", "Virtual credits", "Contains ads"]
+    };
     const DPCHIPS = {
       tr: ["13 dil", "Tek dokunuşla oynanır", "3 denizaltı", "Yatay ekran", "Çevrimdışı oynanır", "İsteğe bağlı ödüllü reklamlar"],
       en: ["13 languages", "One-touch controls", "3 submarines", "Landscape play", "Works offline", "Optional rewarded ads"]
@@ -1089,6 +1196,7 @@
         `<article class="game" id="${id}" style="--g:${c}66"><div class="top"><img class="ico" src="assets/icon-${ic}.webp" alt="${n} ${t.icon}" width="72" height="72" loading="lazy"><div class="meta"><span class="tag">${tag[l]}</span>${pkg ? "" : `<span class="date">${t.soon}</span>`}</div></div>
   <h3>${n}</h3><p>${d[l]}</p>${chips(id, l)}
   ${pkg ? `<div class="links"><a class="play" href="${P}${pkg}" rel="noopener">${t.open_play}</a><a class="pp" href="${PP}${pp}/privacy-policy.html" rel="noopener">${t.privacy}</a></div>` : `<span class="soon">${t.soon_play}</span>`}</article>`).join("");
+      { const kc = document.getElementById("ksChips"); if (kc) kc.innerHTML = KSCHIPS[l].map(c => `<li>${c}</li>`).join("") }
       { const dc = document.getElementById("dpChips"); if (dc) dc.innerHTML = DPCHIPS[l].map(c => `<li>${c}</li>`).join("") }
       document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.l === l));
     }
